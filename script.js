@@ -72,7 +72,7 @@ function catching(){
 if(enemyBorder == true){
     
     //var x = setInterval(randomEnemy, 5000);
-    if(enemyLocation[0]+25-location01[0]<=30 &&enemyLocation[0]+25-location01[0]>=-30 && enemyLocation[1]-location01[1]<=30 && enemyLocation[1]-location01[1]>=-30){
+    if(enemyLocation[0]-location01[0]<=30 &&enemyLocation[0]-location01[0]>=-30 && enemyLocation[1]-location01[1]<=30 && enemyLocation[1]-location01[1]>=-30){
         //console.log(enemyLocation[0]-location01[0]);
         //console.log(enemyLocation[1]-location01[1]);
         score++;
@@ -82,7 +82,7 @@ if(enemyBorder == true){
        // console.log( enemyLocation);    
         console.log("Score: " + score.toString());
         enemyBorder = false;
-        if(score>5){
+        if(score>4){
         clearInterval(x);
         $("#victory").show();
         
