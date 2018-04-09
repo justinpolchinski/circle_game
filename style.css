@@ -17,6 +17,15 @@ body{
     text-align: right;
     margin-right: 1%;
 }
+p{
+    border:black solid 2px;
+    background: burlywood;
+    width: 800px;
+    border-radius: 10px;
+    margin: 2% auto 2% auto;
+    text-align: center;
+      
+}
 .boxAnimate{
     border:black solid 2px;
     background: burlywood;
@@ -41,4 +50,11 @@ body{
     background: red;
     width:25px;
     height: 25px;
+}
+#victory{
+    color: white;
+    display: none;
+    background: maroon;
+    text-align: center;
+    margin: auto;
 }

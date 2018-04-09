@@ -18,7 +18,7 @@ var score = 0;
 //Down: 40
 //Right: 39
 //Left: 37
-var x = setInterval(randomEnemy, 5000);
+var x = setInterval(randomEnemy, 2500);
 $(".boxAnimate").keydown(function(){
     ball.css("background-color", "yellow");
 });
@@ -27,7 +27,7 @@ $('html').on("keydown", moveBall);
 
 
 function moveBall (event) {
-    console.log(event.keyCode);
+    //console.log(event.keyCode);
 //moving down
     console.log("On key: " + enemyLocation.toString());
     if(event.keyCode==40 && topNum<=370){
@@ -44,7 +44,7 @@ function moveBall (event) {
         top1 = topNum.toString() + px;
         location01[0]= leftNum;
         location01[1]= topNum;
-       // console.log("location01: " + location01.toString());
+        //console.log("location01: " + location01.toString());
         ball.css({"left": left1, "top": top1});
         catching();
     };
@@ -53,7 +53,7 @@ function moveBall (event) {
         left1 = leftNum.toString() + px;
         location01[0]= leftNum;
         location01[1]= topNum;
-       // console.log("location01: " + location01.toString());
+        //console.log("location01: " + location01.toString());
         ball.css({"left": left1, "top": top1});
         catching();
     };
@@ -73,41 +73,36 @@ if(enemyBorder == true){
     
     //var x = setInterval(randomEnemy, 5000);
     if(enemyLocation[0]+25-location01[0]<=50 &&enemyLocation[0]+25-location01[0]>=-50 && enemyLocation[1]-location01[1]<=50 && enemyLocation[1]-location01[1]>=-50){
-        console.log(enemyLocation[0]-location01[0]);
-        console.log(enemyLocation[1]-location01[1]);
+        //console.log(enemyLocation[0]-location01[0]);
+        //console.log(enemyLocation[1]-location01[1]);
         score++;
-        console.log(location01);
-        console.log( enemyLocation);    
+        //console.log(location01);
+       // console.log( enemyLocation);    
         console.log("Score: " + score.toString());
         enemyBorder = false;
+        if(score>5){
         clearInterval(x);
+        $("#victory").show();
+        
         }
-        //enemyLocation[0] = Math.floor(Math.random()*750);
-        //enemyLocation[1] = Math.floor(Math.random()*350);
+        }
+     
     
 }
 };
 function randomEnemy(){
     
-    
-    enemy.css({"left": enemyLocation[0].toString() +px, "top": enemyLocation[1].toString() +px});
-    console.log(enemyBorder);
-    console.log("Enemy Location: " + enemyLocation.toString());
-    console.log("My Location: " + location01.toString());
-    console.log(enemyLocation[0]-location01[0]);
-    console.log(enemyLocation[1]-location01[1]);
-    // if(enemyLocation[0]-location01[0]<=50 &&enemyLocation[0]-25-location01[0]>=-50 && enemyLocation[1]-location01[1]<=50 && enemyLocation[1]-25-location01[1]>=-50){
-    // console.log(enemyLocation[0]-location01[0]);
-    // console.log(enemyLocation[1]-location01[1]);
-    // score++;
-    // console.log(location01);
-    // console.log( enemyLocation);    
-    // console.log("Score: " + score.toString());
-    // enemyBorder = false;
-    // clearInterval(x);
-    // }
     enemyLocation[0] = Math.floor(Math.random()*750);
     enemyLocation[1] = Math.floor(Math.random()*350);
+    enemy.css({"left": enemyLocation[0].toString() +px, "top": enemyLocation[1].toString() +px});
+    // console.log(enemyBorder);
+    // console.log("Enemy Location: " + enemyLocation.toString());
+    // console.log("My Location: " + location01.toString());
+    // console.log(enemyLocation[0]-location01[0]);
+    // console.log(enemyLocation[1]-location01[1]);
+    enemyBorder = true;
+   
+    
 }
 
 
