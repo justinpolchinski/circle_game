@@ -72,10 +72,12 @@ function catching(){
 if(enemyBorder == true){
     
     //var x = setInterval(randomEnemy, 5000);
-    if(enemyLocation[0]+25-location01[0]<=50 &&enemyLocation[0]+25-location01[0]>=-50 && enemyLocation[1]-location01[1]<=50 && enemyLocation[1]-location01[1]>=-50){
+    if(enemyLocation[0]+25-location01[0]<=30 &&enemyLocation[0]+25-location01[0]>=-30 && enemyLocation[1]-location01[1]<=30 && enemyLocation[1]-location01[1]>=-30){
         //console.log(enemyLocation[0]-location01[0]);
         //console.log(enemyLocation[1]-location01[1]);
         score++;
+        $("#scoreBox").html('');
+        $("#scoreBox").text('Score: ' + score.toString());
         //console.log(location01);
        // console.log( enemyLocation);    
         console.log("Score: " + score.toString());
